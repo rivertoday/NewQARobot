@@ -100,13 +100,14 @@
                     function(ret,status){
                         strA = '<div class="atalk"><span>您说 :' + TalkWords.value +'</span></div>';
                         strB = '<div class="btalk"><span>智障说 :' + ret.ans +'</span></div>' ;
-                        Words.innerHTML = Words.innerHTML + strA+strB;
+                        //Words.innerHTML = Words.innerHTML + strA + strB;
                         TalkWords.value = "";
-                        //animate 动画效果
-                        Words.animate({
-                            scrollTop: Words.scrollHeight}, 500);
-                        //动画效果结束
-
+                        latestMessage = document.createElement('div');
+                        latestMessage.innerHTML = strA + strB;
+                        latestMessage = Words.appendChild(latestMessage);
+                        //Now we scroll the message into view
+                        //window.scrollBy(latestMessage.offsetHeight, window.scrollY);
+                        Words.scrollTop = Words.scrollHeight;
                     }
                 );
             });
