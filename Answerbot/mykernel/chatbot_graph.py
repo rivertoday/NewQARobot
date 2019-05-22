@@ -16,7 +16,7 @@ class ChatBotGraph:
         self.searcher = AnswerSearcher()
 
     def chat_main(self, sent):
-        answer = '抱歉，回答不了您的问题，请联系北京汉典制药——汉典医谷团队，为您寻求合适答案！'
+        answer = '抱歉，回答不了您的问题，请按照模式“疾病——症状、治疗、药品、饮食等”来进行提问，谢谢！'
         res_classify = self.classifier.classify(sent)
         if not res_classify:
             return answer
