@@ -99,7 +99,7 @@
                 $.post("/answer/",{question:$("#talkwords").val()},
                     function(ret,status){
                         strA = '<div class="atalk"><span>您说 :' + TalkWords.value +'</span></div>';
-                        strB = '<div class="btalk"><span>智障说 :' + ret.ans +'</span></div>' ;
+                        strB = '<div class="btalk"><span>智诊说 :' + ret.ans +'</span></div>' ;
                         //Words.innerHTML = Words.innerHTML + strA + strB;
                         TalkWords.value = "";
                         latestMessage = document.createElement('div');
@@ -116,12 +116,12 @@
     </script>
 </head>
 <body>
-<h1>欢迎试用人工智障问答系统</h1>
+<h1>欢迎试用人工智诊问答系统</h1>
 
 <div class="talk_con">
     <div class="talk_show" id="words">
         <div class="atalk"><span id="asay">您说：吃饭了吗？</span></div>
-        <div class="btalk"><span id="bsay">智障说：还没呢，你呢？</span></div>
+        <div class="btalk"><span id="bsay">智诊说：还没呢，你呢？</span></div>
         <div id="msg_end" style="height:0px; overflow:hidden"></div>
     </div>
     <div class="talk_input">
