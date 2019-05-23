@@ -24,6 +24,7 @@ class AnswerSearcher:
             answers = []
             for query in queries:
                 ress = self.g.run(query).data()
+                print(">>>DEBUG: cql query result: %s" % ress)
                 answers += ress
             final_answer = self.answer_prettify(question_type, answers)
             if final_answer:
